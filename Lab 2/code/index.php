@@ -126,3 +126,17 @@ $min = min($array1);
 $max = max($array1);
 echo "min = {$min}\n";
 echo "max = {$max}\n";
+
+echo "\n";
+
+//5-ая часть
+$randValue = rand(1, 100);
+echo "Рандомное число от 1 до 100: {$randValue}\n";
+
+echo "Массив из 10 случайных чисел:\n";
+$arrayOfRandomNumbers = [];
+for ($i = 0; $i < 10; ++$i)
+    $arrayOfRandomNumbers[$i] = rand(1, 1000);
+var_dump($arrayOfRandomNumbers);
+
+echo "\n";
