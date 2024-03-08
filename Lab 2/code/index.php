@@ -42,3 +42,8 @@ $days = $months * 16;
 $daysPerLanguage = $days / $numLanguages;
 echo "На один язык в среднем ушло {$daysPerLanguage}\n";
 
+
+echo "\n----- TASK 4 -----\n";
+
+$squareOfEight = 8 ** 2;
+echo "Квадрат восьми: {$squareOfEight}\n";
