@@ -70,14 +70,14 @@ echo "a % b = {$c}\n";
 
 if ($a % $b == 0)
 {
-    echo "Делится\n";
+    echo "Делится. ";
     echo "a / b = ";
     echo $a / $b;
     echo "\n";
 }
 else
 {
-    echo "Делится с остатком\n";
+    echo "Делится с остатком. ";
     echo "Остаток: {$c}\n";
 }
 
@@ -185,3 +185,80 @@ for ($i = 0; $i < 10; ++$i)
         break;
     }
 }
+
+
+echo "\n----- ФУНКЦИИ №1-----\n";
+function printStringReturnNumber(string $stringNumber) : int
+{
+    echo "Строка: {$stringNumber}\n";
+    return intval($stringNumber);
+}
+
+$myNum1 = printStringReturnNumber("456");
+echo "Число: {$myNum1}\n";
+
+
+echo "\n----- ФУНКЦИИ №2-----\n";
+
+function increaseEnthusiasm(string $str) : string
+{
+    return $str . "!";
+}
+
+echo "Результат применения increaseEnthusiasm(): ";
+echo increaseEnthusiasm("Что-то не весело как-то");
+echo "\n";
+
+function repeatThreeTimes(string $str) : string
+{
+    return $str.$str.$str;
+}
+
+echo "Результат применения repeatThreeTimes(): ";
+echo repeatThreeTimes("Андрюха");
+echo "\n";
+
+echo "Результат применения increaseEnthusiasm(repeatThreeTimes()): ";
+echo increaseEnthusiasm(repeatThreeTimes("Gut"));
+echo "\n";
+
+function cut(string $str, int $desiredLen = 10) : string
+{
+    $tempStr = "";
+    for ($i = 0; $i < $desiredLen; ++$i)
+    {
+        if ($i >= strlen($str))
+            break;
+        $tempStr .= $str[$i];
+    }
+    return $tempStr;
+}
+
+echo "Обрезанная строка: ";
+echo cut("abcdefg", 1);
+echo "\n";
+
+function recursiveOutputArray(array $array, int $size): void
+{
+    if ($size <= 0)
+        return;
+    else
+    {
+        recursiveOutputArray($array, $size - 1);
+        echo $array[$size - 1] . " ";
+    }
+}
+echo "Рекурсивный вывод массива: ";
+recursiveOutputArray($arrayOfRandomNumbers, count($arrayOfRandomNumbers));
+echo "\n";
+
+function sumOfDigitsWithCondition(int $numb): int
+{
+    while (array_sum(str_split($numb)) > 9)
+        $numb = array_sum(str_split($numb));
+    return array_sum(str_split($numb));
+}
+
+echo "Результат фукнции sumOfDigitsWithCondition(): ";
+echo sumOfDigitsWithCondition(4156798516999);
+echo "\n";
