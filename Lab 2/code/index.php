@@ -140,3 +140,16 @@ for ($i = 0; $i < 10; ++$i)
 var_dump($arrayOfRandomNumbers);
 
 echo "\n";
+
+//6-ая часть
+$x = 4;
+$y = 10;
+$absXY = abs($x - $y);
+echo "Модуль разности a и b: {$absXY}\n";
+
+$mas = [1, 2, -1, -2, 3, -3];
+for ($i = 0; $i < 6; ++$i)
+    $mas[$i] = abs($mas[$i]);
+echo "Массив из абсолютных величин:\n";
+var_dump($mas);
+
