@@ -62,7 +62,7 @@ echo "answer = {$answer}\n";
 
 
 echo "\n----- TASK 6 -----\n";
-
+//1-ая часть
 $a = 10;
 $b = 3;
 $c = $a % $b;
@@ -81,6 +81,9 @@ else
     echo "Остаток: {$c}\n";
 }
 
+echo "\n";
+
+//2-ая часть
 $st = pow(2, 10);
 echo "2^10 = {$st}\n";
 $squareRoot = sqrt(245);
@@ -92,3 +95,29 @@ foreach ($array as $value)
     $sumOfSquares += pow($value, 2);
 $rootOfSumOfSquares = sqrt($sumOfSquares);
 echo "Корень из суммы квадратов элементов массива array: {$rootOfSumOfSquares}\n";
+
+echo "\n";
+
+//3-я часть
+$squareRoot1 = sqrt(379);
+echo "Округление до целых корня из 379: ";
+echo round($squareRoot1);
+echo "\n";
+
+echo "Округление до десятых корня из 379: ";
+echo round($squareRoot1, 1);
+echo "\n";
+
+echo "Округление до сотых корня из 379: ";
+echo round($squareRoot1, 2);
+echo "\n";
+
+$squareRoot2 = sqrt(587);
+$floorValue = floor($squareRoot2);
+$ceilValue = ceil($squareRoot2);
+$floorAndCeil = ["floor" => $floorValue, "ceil" => $ceilValue];
+var_dump($floorAndCeil);
+
+echo "\n";
+
+//4-ая часть
