@@ -1,6 +1,6 @@
 <?php
 
-echo "----- TASK 1 -----";
+echo "----- ДОСТУП ПО ССЫЛКЕ -----";
 
 /* Imagine a lot of code here */
 $very_bad_unclear_name = "15 chicken wings";
@@ -13,7 +13,7 @@ $order .= " from the KFS";
 echo "\nYour order is: $very_bad_unclear_name.\n";
 
 
-echo "\n----- TASK 2 -----\n";
+echo "\n----- ЧИСЛА -----\n";
 
 $number1 = 52;
 echo "{$number1}\n";
@@ -34,7 +34,7 @@ echo $lastMonth - $thisMonth;
 echo "\n";
 
 
-echo "\n----- TASK 3 -----\n";
+echo "\n----- УМНОЖЕНИЕ И ДЕЛЕНИЕ -----\n";
 
 $numLanguages = 4;
 $months = 11;
@@ -43,13 +43,13 @@ $daysPerLanguage = $days / $numLanguages;
 echo "На один язык в среднем ушло {$daysPerLanguage}\n";
 
 
-echo "\n----- TASK 4 -----\n";
+echo "\n----- СТЕПЕНЬ -----\n";
 
 $squareOfEight = 8 ** 2;
 echo "Квадрат восьми: {$squareOfEight}\n";
 
 
-echo "\n----- TASK 5 -----\n";
+echo "\n----- ОПЕРАТОРЫ ПРИСВОЕНИЯ -----\n";
 
 $myNum = 52;
 $answer = $myNum;
@@ -61,8 +61,8 @@ $answer -= $myNum;
 echo "answer = {$answer}\n";
 
 
-echo "\n----- TASK 6 -----\n";
-//1-ая часть
+echo "\n----- МАТЕМАТИЧЕСКИЕ ФУНКЦИИ -----\n";
+//работа с %
 $a = 10;
 $b = 3;
 $c = $a % $b;
@@ -83,7 +83,7 @@ else
 
 echo "\n";
 
-//2-ая часть
+//работа с sqrt и pow
 $st = pow(2, 10);
 echo "2^10 = {$st}\n";
 $squareRoot = sqrt(245);
@@ -98,7 +98,7 @@ echo "Корень из суммы квадратов элементов мас�
 
 echo "\n";
 
-//3-я часть
+//работа с функциями округления
 $squareRoot1 = sqrt(379);
 echo "Округление до целых корня из 379: ";
 echo round($squareRoot1);
@@ -120,7 +120,7 @@ var_dump($floorAndCeil);
 
 echo "\n";
 
-//4-ая часть
+//работа с min и max
 $array1 = [4, -2, 5, 19, -130, 0, 10];
 $min = min($array1);
 $max = max($array1);
@@ -129,7 +129,7 @@ echo "max = {$max}\n";
 
 echo "\n";
 
-//5-ая часть
+//работа с рандомом
 $randValue = rand(1, 100);
 echo "Рандомное число от 1 до 100: {$randValue}\n";
 
@@ -141,7 +141,7 @@ var_dump($arrayOfRandomNumbers);
 
 echo "\n";
 
-//6-ая часть
+//работа с модулем
 $x = 4;
 $y = 10;
 $absXY = abs($x - $y);
@@ -153,3 +153,19 @@ for ($i = 0; $i < 6; ++$i)
 echo "Массив из абсолютных величин:\n";
 var_dump($mas);
 
+echo "\n";
+
+//общее
+$inputNumb = 30;
+$dividers = [];
+$index = 0;
+for ($divider = 1; $divider < $inputNumb + 1; ++$divider)
+{
+    if ($inputNumb % $divider == 0)
+    {
+        $dividers[$index] = $divider;
+        ++$index;
+    }
+}
+echo "Все делители числа {$inputNumb}:\n";
+var_dump($dividers);
