@@ -121,3 +121,8 @@ var_dump($floorAndCeil);
 echo "\n";
 
 //4-ая часть
+$array1 = [4, -2, 5, 19, -130, 0, 10];
+$min = min($array1);
+$max = max($array1);
+echo "min = {$min}\n";
+echo "max = {$max}\n";
