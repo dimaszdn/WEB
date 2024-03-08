@@ -60,3 +60,35 @@ $answer /= 2;
 $answer -= $myNum;
 echo "answer = {$answer}\n";
 
+
+echo "\n----- TASK 6 -----\n";
+
+$a = 10;
+$b = 3;
+$c = $a % $b;
+echo "a % b = {$c}\n";
+
+if ($a % $b == 0)
+{
+    echo "Делится\n";
+    echo "a / b = ";
+    echo $a / $b;
+    echo "\n";
+}
+else
+{
+    echo "Делится с остатком\n";
+    echo "Остаток: {$c}\n";
+}
+
+$st = pow(2, 10);
+echo "2^10 = {$st}\n";
+$squareRoot = sqrt(245);
+echo "Квадратный корень из 245: {$squareRoot}\n";
+
+$array = [4, 2, 5, 19, 13, 0, 10];
+$sumOfSquares = 0;
+foreach ($array as $value)
+    $sumOfSquares += pow($value, 2);
+$rootOfSumOfSquares = sqrt($sumOfSquares);
+echo "Корень из суммы квадратов элементов массива array: {$rootOfSumOfSquares}\n";
