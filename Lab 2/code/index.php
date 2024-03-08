@@ -169,3 +169,19 @@ for ($divider = 1; $divider < $inputNumb + 1; ++$divider)
 }
 echo "Все делители числа {$inputNumb}:\n";
 var_dump($dividers);
+
+echo "\n";
+
+$array2 = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
+$sumOfFirstNumbers = 0;
+$count = 0;
+for ($i = 0; $i < 10; ++$i)
+{
+    $sumOfFirstNumbers += $array2[$i];
+    ++$count;
+    if ($sumOfFirstNumbers > 10)
+    {
+        echo "Нужно сложить первых элементов: {$count} \n";
+        break;
+    }
+}
