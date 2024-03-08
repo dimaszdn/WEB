@@ -33,3 +33,12 @@ echo "Разница между расходами: ";
 echo $lastMonth - $thisMonth;
 echo "\n";
 
+
+echo "\n----- TASK 3 -----\n";
+
+$numLanguages = 4;
+$months = 11;
+$days = $months * 16;
+$daysPerLanguage = $days / $numLanguages;
+echo "На один язык в среднем ушло {$daysPerLanguage}\n";
+
