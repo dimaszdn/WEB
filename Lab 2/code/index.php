@@ -389,3 +389,28 @@ echo "\n----- Циклы -----\n";
 foreach ($arrayX as $value)
     echo $value . "\n";
 echo "\n";
+
+
+echo "\n----- Комбинация функций -----\n";
+
+$array3 = [1, 2, 3, 4, 5, 6];
+$arithmeticMean = array_sum($array3) / count($array3);
+echo "Среднее арифметическое: {$arithmeticMean}\n";
+
+echo "Сумма чисел от 1 до 100: ";
+echo array_sum(range(1, 100));
+echo "\n";
+
+echo "Массив из корней квадратных:\n";
+$arrayOfRoots = array_map('sqrt', $array3);
+var_dump($arrayOfRoots);
+echo "\n";
+
+echo "Массив с ключами-английский алфавит:\n";
+$arrayWithKeysAbc = array_combine(range('a', 'z'), range(1, 26));
+var_dump($arrayWithKeysAbc);
+echo "\n";
+
+$digitString = '1234567890';
+$sumPair = array_sum(str_split($digitString, 2));
+echo "12+34+56+78+90 = {$sumPair}\n";
