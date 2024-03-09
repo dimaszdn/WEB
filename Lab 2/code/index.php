@@ -340,3 +340,46 @@ echo "\n";
 
 echo "Последний элемент: {$arr1[count($arr1) - 1]} \n";
 echo "Предпоследний элемент: {$arr1[count($arr1) - 2]} \n";
+
+
+echo "\n----- Конструкция if-else -----\n";
+
+function checkSum(int $a, int $b) : bool
+{
+    if ($a + $b > 10)
+        return true;
+    else
+        return false;
+}
+
+function checkForEquality(int $a, int $b) : bool
+{
+    if ($a === $b)
+        return true;
+    else
+        return false;
+}
+
+if (!$myNum)
+    echo 'верно';
+
+$age = 99;
+if ($age < 10 || $age > 99)
+    echo "Значение переменной age меньше 10 или больше 99\n";
+else
+{
+    $sumDigits = array_sum(str_split($age));
+    if ($sumDigits <= 9)
+        echo "Сумма цифр однозначна\n";
+    else
+        echo "Сумма цифр двузначна\n";
+}
+
+$arr2 = [1, 2, 3];
+if (count($arr2) == 3)
+{
+    echo "Сумма элементов массива состоящего из 3-ех элементов: ";
+    echo array_sum($arr2);
+    echo "\n";
+}
+
