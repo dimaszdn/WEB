@@ -262,3 +262,81 @@ function sumOfDigitsWithCondition(int $numb): int
 echo "Результат фукнции sumOfDigitsWithCondition(): ";
 echo sumOfDigitsWithCondition(4156798516999);
 echo "\n";
+
+
+echo "\n----- Массивы -----\n";
+
+$arrayX = [];
+$sizeArrayX = 10;
+$arrayX[0] = 'x';
+for ($i = 1; $i < $sizeArrayX; ++$i)
+    $arrayX[$i] = $arrayX[$i - 1] . 'x';
+
+echo "Массив состоящий из x, xx, xxx ...\n";
+var_dump($arrayX);
+echo "\n";
+
+function arrayFill($value, $count) : array
+{
+    $array = [];
+    for ($i = 0; $i < $count; ++$i)
+        $array[$i] = $value;
+    return $array;
+}
+
+$arrayOfOnlyX = arrayFill('x', 5);
+echo "Тест функции arrayFill():\n";
+var_dump($arrayOfOnlyX);
+echo "\n";
+
+$matrix = [
+    [1, 2, 3],
+    [4, 5],
+    [6]
+];
+
+$sumOfMatrixElements = 0;
+for ($i = 0; $i < count($matrix); ++$i)
+    $sumOfMatrixElements += array_sum($matrix[$i]);
+echo "Сумма элементов матрицы: {$sumOfMatrixElements}\n\n";
+
+echo "Массив заполненный с помощью циклов:\n";
+$sizeX = 3;
+$sizeY = 3;
+$array33i = [];
+$k = 1;
+for ($y = 0; $y < $sizeY; ++$y)
+{
+    for ($x = 0; $x < $sizeX; ++$x)
+    {
+        $array33i[$y][$x] = $k;
+        ++$k;
+    }
+}
+var_dump($array33i);
+echo "\n";
+
+$arr = [2, 5, 3, 9];
+$result = ($arr[0] * $arr[1]) + ($arr[2] * $arr[3]);
+echo "Значение переменной result = {$result}\n\n";
+
+$user = [
+    'name' => ['Александр', 'Лев'],
+    'surname' => ['Пушкин', 'Толстой'],
+    'patronymic' => ['Сергеевич', 'Николаевич']
+];
+
+foreach($user['surname'] as $key => $surname)
+    echo $surname . ' ' . $user['name'][$key] . ' ' . $user['patronymic'][$key] . "\n\n";
+
+$date = ['year' => '23', 'month' => '03', 'day' => '09'];
+echo "Дата: ";
+echo $date['year'] . '.' . $date['month'] . '.' . $date['day'] . "\n\n";
+
+$arr1 = ['a', 'b', 'c', 'd', 'e'];
+echo "Количество элементов: ";
+echo count($arr1);
+echo "\n";
+
+echo "Последний элемент: {$arr1[count($arr1) - 1]} \n";
+echo "Предпоследний элемент: {$arr1[count($arr1) - 2]} \n";
