@@ -1,5 +1,16 @@
 <?php
 
+/**
+ * 1. Блоки заданий разграничены подобным комментарием
+ *          "----- <название блока> -----"
+ * 2. Из-за того, что в названиях повторялись имена переменных,
+ * я использовал несколько другие (возможно добавлял цифру в конце
+ * по типу array1; или где то сокращал arr; или что-то ещё)
+ *
+ * 3. Если в задании имя переменной было написано в подобном виде: my_num,
+ * то я записывал в стиле CamelCase (исключение первое задание)
+ */
+
 echo "----- ДОСТУП ПО ССЫЛКЕ -----";
 
 /* Imagine a lot of code here */
@@ -80,7 +91,6 @@ else
     echo "Делится с остатком. ";
     echo "Остаток: {$c}\n";
 }
-
 echo "\n";
 
 //работа с sqrt и pow
@@ -95,29 +105,22 @@ foreach ($array as $value)
     $sumOfSquares += pow($value, 2);
 $rootOfSumOfSquares = sqrt($sumOfSquares);
 echo "Корень из суммы квадратов элементов массива array: {$rootOfSumOfSquares}\n";
-
 echo "\n";
 
 //работа с функциями округления
 $squareRoot1 = sqrt(379);
 echo "Округление до целых корня из 379: ";
-echo round($squareRoot1);
-echo "\n";
-
+echo round($squareRoot1) . "\n";
 echo "Округление до десятых корня из 379: ";
-echo round($squareRoot1, 1);
-echo "\n";
-
+echo round($squareRoot1, 1) . "\n";
 echo "Округление до сотых корня из 379: ";
-echo round($squareRoot1, 2);
-echo "\n";
+echo round($squareRoot1, 2) . "\n";
 
 $squareRoot2 = sqrt(587);
 $floorValue = floor($squareRoot2);
 $ceilValue = ceil($squareRoot2);
 $floorAndCeil = ["floor" => $floorValue, "ceil" => $ceilValue];
 var_dump($floorAndCeil);
-
 echo "\n";
 
 //работа с min и max
@@ -126,7 +129,6 @@ $min = min($array1);
 $max = max($array1);
 echo "min = {$min}\n";
 echo "max = {$max}\n";
-
 echo "\n";
 
 //работа с рандомом
@@ -138,21 +140,19 @@ $arrayOfRandomNumbers = [];
 for ($i = 0; $i < 10; ++$i)
     $arrayOfRandomNumbers[$i] = rand(1, 1000);
 var_dump($arrayOfRandomNumbers);
-
 echo "\n";
 
 //работа с модулем
 $x = 4;
 $y = 10;
 $absXY = abs($x - $y);
-echo "Модуль разности a и b: {$absXY}\n";
+echo "Модуль разности x и y: {$absXY}\n";
 
 $mas = [1, 2, -1, -2, 3, -3];
 for ($i = 0; $i < 6; ++$i)
     $mas[$i] = abs($mas[$i]);
 echo "Массив из абсолютных величин:\n";
 var_dump($mas);
-
 echo "\n";
 
 //общее
@@ -169,7 +169,6 @@ for ($divider = 1; $divider < $inputNumb + 1; ++$divider)
 }
 echo "Все делители числа {$inputNumb}:\n";
 var_dump($dividers);
-
 echo "\n";
 
 $array2 = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
@@ -193,7 +192,6 @@ function printStringReturnNumber(string $stringNumber) : int
     echo "Строка: {$stringNumber}\n";
     return intval($stringNumber);
 }
-
 $myNum1 = printStringReturnNumber("456");
 echo "Число: {$myNum1}\n";
 
@@ -204,7 +202,6 @@ function increaseEnthusiasm(string $str) : string
 {
     return $str . "!";
 }
-
 echo "Результат применения increaseEnthusiasm(): ";
 echo increaseEnthusiasm("Что-то не весело как-то");
 echo "\n";
@@ -213,7 +210,6 @@ function repeatThreeTimes(string $str) : string
 {
     return $str.$str.$str;
 }
-
 echo "Результат применения repeatThreeTimes(): ";
 echo repeatThreeTimes("Андрюха");
 echo "\n";
@@ -233,7 +229,6 @@ function cut(string $str, int $desiredLen = 10) : string
     }
     return $tempStr;
 }
-
 echo "Обрезанная строка: ";
 echo cut("abcdefg", 1);
 echo "\n";
@@ -258,7 +253,6 @@ function sumOfDigitsWithCondition(int $numb): int
         $numb = array_sum(str_split($numb));
     return array_sum(str_split($numb));
 }
-
 echo "Результат фукнции sumOfDigitsWithCondition(): ";
 echo sumOfDigitsWithCondition(4156798516999);
 echo "\n";
@@ -279,7 +273,6 @@ function arrayFill($value, $count) : array
         $array[$i] = $value;
     return $array;
 }
-
 $arrayOfOnlyX = arrayFill('x', 5);
 echo "Тест функции arrayFill():\n";
 var_dump($arrayOfOnlyX);
@@ -290,7 +283,6 @@ $matrix = [
     [4, 5],
     [6]
 ];
-
 $sumOfMatrixElements = 0;
 for ($i = 0; $i < count($matrix); ++$i)
     $sumOfMatrixElements += array_sum($matrix[$i]);
@@ -321,9 +313,9 @@ $user = [
     'surname' => ['Пушкин', 'Толстой'],
     'patronymic' => ['Сергеевич', 'Николаевич']
 ];
-
 foreach($user['surname'] as $key => $surname)
-    echo $surname . ' ' . $user['name'][$key] . ' ' . $user['patronymic'][$key] . "\n\n";
+    echo $surname . ' ' . $user['name'][$key] . ' ' . $user['patronymic'][$key] . "\n";
+echo "\n";
 
 $date = ['year' => '23', 'month' => '03', 'day' => '09'];
 echo "Дата: ";
@@ -382,7 +374,7 @@ if (count($arr2) == 3)
 
 echo "\n----- Циклы -----\n";
 /*
- * Немного схитрим
+ * Немного схитрил
  * Ранее по работе создавался массив arrayX, который нам и
  * требуется распечатать фактически.
 */
