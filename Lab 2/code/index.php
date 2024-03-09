@@ -267,14 +267,10 @@ echo "\n";
 echo "\n----- Массивы -----\n";
 
 $arrayX = [];
-$sizeArrayX = 10;
+$sizeArrayX = 20;
 $arrayX[0] = 'x';
 for ($i = 1; $i < $sizeArrayX; ++$i)
     $arrayX[$i] = $arrayX[$i - 1] . 'x';
-
-echo "Массив состоящий из x, xx, xxx ...\n";
-var_dump($arrayX);
-echo "\n";
 
 function arrayFill($value, $count) : array
 {
@@ -383,3 +379,13 @@ if (count($arr2) == 3)
     echo "\n";
 }
 
+
+echo "\n----- Циклы -----\n";
+/*
+ * Немного схитрим
+ * Ранее по работе создавался массив arrayX, который нам и
+ * требуется распечатать фактически.
+*/
+foreach ($arrayX as $value)
+    echo $value . "\n";
+echo "\n";
