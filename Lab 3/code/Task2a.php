@@ -21,7 +21,7 @@
     </form>
     <?php
         $text = "";
-        if (!empty($_POST['text']))
+        if (isset($_POST['text']))
             $text = $_POST['text'];
         $matches = array();
         $count = preg_match_all('/[a-zа-я0-9.]+/ui', $text, $matches);

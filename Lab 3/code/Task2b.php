@@ -1,6 +1,6 @@
 <?php
 session_start();
-if (!empty($_POST['surname']) && !empty($_POST['name']) && !empty($_POST['age']))
+if (isset($_POST['surname']) && isset($_POST['name']) && isset($_POST['age']))
 {
     $_SESSION['surname'] = $_POST['surname'];
     $_SESSION['name'] = $_POST['name'];

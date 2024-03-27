@@ -1,6 +1,6 @@
 <?php
 session_start();
-if (!empty($_SESSION['surname']) && !empty($_SESSION['name']) && !empty($_SESSION['age']))
+if (isset($_SESSION['surname']) && isset($_SESSION['name']) && isset($_SESSION['age']))
 {
     echo "<p>Фамилия: {$_SESSION['surname']}</p>";
     echo "<p>Имя: {$_SESSION['name']}</p>";
