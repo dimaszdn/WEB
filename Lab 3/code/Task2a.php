@@ -15,8 +15,10 @@
 <body>
 <div class="form-container">
     <form method="post">
-        <label for="text">Введите текст</label><br>
-        <textarea rows="3" name="text"></textarea><br>
+        <label for="text">
+            Введите текст
+            <textarea rows="3" name="text"></textarea><br>
+        </label><br>
         <input type="submit" value="Count">
     </form>
     <?php
