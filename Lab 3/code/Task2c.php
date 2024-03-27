@@ -1,3 +1,8 @@
+<?php
+session_start();
+if (isset($_GET))
+    $_SESSION['input'] = $_GET;
+?>
 <!doctype html>
 <html lang="en">
 <head>
@@ -24,7 +29,7 @@
 </head>
 <body>
 <form>
-    <form method="post">
+    <form method="get">
         <label>
             Имя
             <input type="text" name="name">
