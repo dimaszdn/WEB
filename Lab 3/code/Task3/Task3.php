@@ -1,3 +1,7 @@
+<?php
+include "Func.php";
+$path = '/code/Task3/categories/';
+?>
 <!doctype html>
 <html lang="en">
 <head>
@@ -8,39 +12,61 @@
     <title>BulBoard</title>
 </head>
 <body>
-    <form action="./save.php" method="post">
-        <label for="email">
-            Email
-            <input type="email" name="email" required>
-        </label>
+    <div id="form">
+        <form action="./save.php" method="post">
+            <label for="email">
+                Email
+                <input type="email" name="email" required>
+            </label>
 
-        <label for="category">
-            Category
-            <select name="category" required>
+            <label for="category">
+                Category
+                <select name="category" required>
+                    <?php
+                    $categories = getCategories($path);
+                    foreach ($categories as $category)
+                    {
+                        echo "<option value='$category'>" . $category . " </option>";
+                    }
+                    ?>
+                </select>
+            </label>
+
+            <label for="title">
+                Title
+                <input type="text" name="title" required>
+            </label>
+
+            <label for="description">
+                Description
+                <textarea rows="3" name="description"></textarea>
+            </label>
+
+            <input type="submit" value="Save">
+        </form>
+    </div>
+    <div id="table">
+        <table>
+            <thead>
+                <th>Category</th>
+                <th>Title</th>
+                <th>Description</th>
+            </thead>
+            <tbody>
                 <?php
-                $categoriesDir = '/code/categories';
-                $categories = array_filter(glob($categoriesDir . '/*'), 'is_dir');
-                $dirName = "";
-                foreach ($categories as $category)
-                {
-                    $dirName = basename($category);
-                    echo "<option value='$dirName'>" . $dirName . " </option>";
-                }
+                    foreach ($categories as $category)
+                    {
+                        $titles = getTitles($path . $category);
+                        foreach ($titles as $title)
+                        {
+                            echo "<tr><td>" . $category . " </td>";
+                            echo "<td>" . $title . " </td>";
+                            echo "<td>" . file_get_contents($path . $category . '/' . $title . '.txt') . " </td></tr>";
+                        }
+                    }
                 ?>
-            </select>
-        </label>
-
-        <label for="title">
-            Title
-            <input type="text" name="title" required>
-        </label>
-
-        <label for="description">
-            Description
-            <textarea rows="3" name="description"></textarea>
-        </label>
-
-        <input type="submit" value="Save">
-    </form>
+            </tbody>
+        </table>
+    </div>
 </body>
 </html>
