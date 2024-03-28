@@ -8,7 +8,7 @@
     <title>BulBoard</title>
 </head>
 <body>
-    <form action="save.php" method="post">
+    <form action="./save.php" method="post">
         <label for="email">
             Email
             <input type="email" name="email" required>

@@ -2,7 +2,7 @@
 
 function redirectToHome() : void
 {
-    header('Location: /Task3.php');
+    header('Location: /Task3/Task3.php');
     exit();
 }
 
