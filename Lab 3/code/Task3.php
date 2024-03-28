@@ -20,8 +20,12 @@
                 <?php
                 $categoriesDir = '/code/categories';
                 $categories = array_filter(glob($categoriesDir . '/*'), 'is_dir');
+                $dirName = "";
                 foreach ($categories as $category)
-                    echo "<option value='$category'>" . basename($category) . " </option>"
+                {
+                    $dirName = basename($category);
+                    echo "<option value='$dirName'>" . $dirName . " </option>";
+                }
                 ?>
             </select>
         </label>
