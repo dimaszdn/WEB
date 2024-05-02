@@ -1,6 +1,6 @@
 <?php
-include "Func.php";
-$path = '/code/categories/';
+    include "Func.php";
+    $path = '/code/categories/';
 ?>
 <!doctype html>
 <html lang="en">
@@ -54,16 +54,19 @@ $path = '/code/categories/';
             </thead>
             <tbody>
                 <?php
-                    foreach ($categories as $category)
+                    $client = createClient();
+                    $service = new Google_Service_Sheets($client);
+                    $data = getDataFromTable($service, 'A1:C999');
+
+                    unset($data[0]); //убрали заголовки
+                    $output = '';
+                    foreach ($data as $arr)
                     {
-                        $titles = getTitles($path . $category);
-                        foreach ($titles as $title)
-                        {
-                            echo "<tr><td>" . $category . " </td>";
-                            echo "<td>" . $title . " </td>";
-                            echo "<td>" . file_get_contents($path . $category . '/' . $title . '.txt') . " </td></tr>";
-                        }
+                        foreach ($arr as $td)
+                            $output .= '<td>'.$td.'</td>';
+                        $output .= '</tr>';
                     }
+                    echo $output;
                 ?>
             </tbody>
         </table>
