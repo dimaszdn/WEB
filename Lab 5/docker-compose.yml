@@ -15,6 +15,7 @@ services:
     ports:
       - '6603:3306'
     environment:
+      MYSQL_DATABASE: web
       MYSQL_ROOT_PASSWORD: 123456
 
   php:
