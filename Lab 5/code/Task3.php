@@ -54,25 +54,20 @@
             </thead>
             <tbody>
                 <?php
-                    $mysqli = new mysqli('db', 'root', '123456', 'web');
-
-                    if (mysqli_connect_errno())
-                        printf("Подключение к серверу MySQL невозможно. Код ошибки: %s\n", mysqli_connect_error());
-
-                    $mysqli->query('INSERT INTO ad (email, title, description, category) VALUES ("test@test.com", "title", "desc", "other")');
-                    if ($result = $mysqli->query('SELECT * FROM ad ORDER BY created DESC'))
+                    $db = extracted();
+                    foreach ($db->query("SELECT * FROM web.ad") as $row)
                     {
-                        print("Ads:\n");
-                        while ($row = $result->fetch_assoc())
-                        {
-                            printf("%s (%s)\n", $row['email'], $row['title']);
-                        }
-                        $result->close();
+                        $category = $row['category'];
+                        $title = $row['title'];
+                        $description = $row['description'];
+                        echo "<tr><td>" . $category . " </td>";
+                        echo "<td>" . $title . " </td>";
+                        echo "<td>" . $description . " </td></tr>";
                     }
-                    $result->close();
                 ?>
             </tbody>
         </table>
     </div>
+
 </body>
 </html>
